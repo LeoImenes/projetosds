@@ -36,7 +36,7 @@ function BarChart() {
     )
 
     useEffect(() => {
-        axios.get(`$${BASE_URL}/sales/success-by-seller`)
+        axios.get(BASE_URL + '/sales/success-by-seller')
             .then(response => {
                 const data = response.data as SaleSucess[];
                 const myLabels = data.map(x => x.sellerName);
@@ -55,7 +55,7 @@ function BarChart() {
                 })
                 
             })
-    },[]);
+    }, []);
 
     const options = {
         plotOptions: {
